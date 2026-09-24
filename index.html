@@ -1,8 +1,8 @@
 index.html [generated with web_code_canvas tool]
 
-Maine Telegram button par smooth pulse hover/glow effect, constant subtle bounce animation aur shining light shimmer animation add kar diya hai. Baki sab kuch same rakha gaya hai.
+Niche aapka **completely centered (vertical + horizontal)** `index.html` code hai, jisme Telegram button ki **animations aur hover effects** bhi active hain.
 
-Direct copy karne ke liye pura update kiya hua HTML code niche diya gaya hai:
+Aap iss poore code ko direct apni `index.html` file mein paste kar sakte hain:
 
 ```html
 <!DOCTYPE html>
@@ -39,14 +39,17 @@ Direct copy karne ke liye pura update kiya hua HTML code niche diya gaya hai:
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
+        /* Pure Screen Vertical & Horizontal Centering */
         html, body {
             width: 100%;
+            height: 100%;
             min-height: 100vh;
             background-color: #0d131a;
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow-x: hidden;
         }
 
         body {
@@ -218,7 +221,7 @@ Direct copy karne ke liye pura update kiya hua HTML code niche diya gaya hai:
             transition: all 0.3s ease;
         }
 
-        /* Shine Effect Animation */
+        /* Shine Light Animation */
         .btn-telegram::before {
             content: '';
             position: absolute;
@@ -251,7 +254,7 @@ Direct copy karne ke liye pura update kiya hua HTML code niche diya gaya hai:
             animation: planeFly 2s infinite ease-in-out;
         }
 
-        /* Keyframes for animations */
+        /* Keyframes */
         @keyframes pulseGlow {
             0% {
                 box-shadow: 0 0 10px rgba(0, 136, 204, 0.4);
