@@ -1,3 +1,10 @@
+index.html [generated with web_code_canvas tool]
+
+Maine Telegram button par smooth pulse hover/glow effect, constant subtle bounce animation aur shining light shimmer animation add kar diya hai. Baki sab kuch same rakha gaya hai.
+
+Direct copy karne ke liye pura update kiya hua HTML code niche diya gaya hai:
+
+```html
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -188,7 +195,9 @@
             color: #e5e7eb;
         }
 
+        /* Animated Telegram Button */
         .btn-telegram {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -202,17 +211,84 @@
             border-radius: 14px;
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
-            transition: all 0.2s ease;
             margin-bottom: 20px;
             letter-spacing: 0.5px;
+            overflow: hidden;
+            animation: pulseGlow 2s infinite alternate, bounceBtn 2.5s infinite ease-in-out;
+            transition: all 0.3s ease;
+        }
+
+        /* Shine Effect Animation */
+        .btn-telegram::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                60deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.25) 50%,
+                transparent 70%
+            );
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
+        }
+
+        .btn-telegram:hover {
+            transform: translateY(-3px) scale(1.02);
+            background: linear-gradient(180deg, #00a2ed 0%, #0077b3 100%);
+            box-shadow: 0 8px 25px rgba(0, 162, 237, 0.7);
         }
 
         .btn-telegram:active {
-            transform: scale(0.98);
+            transform: translateY(0) scale(0.98);
         }
 
         .btn-telegram i {
             font-size: 18px;
+            animation: planeFly 2s infinite ease-in-out;
+        }
+
+        /* Keyframes for animations */
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(0, 136, 204, 0.4);
+            }
+            100% {
+                box-shadow: 0 0 22px rgba(0, 162, 237, 0.8);
+            }
+        }
+
+        @keyframes bounceBtn {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            20% {
+                left: 100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes planeFly {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(3px, -3px);
+            }
         }
 
         .disclaimer-box {
@@ -293,7 +369,7 @@
                 </div>
             </div>
 
-            <!-- Telegram Button -->
+            <!-- Animated Telegram Button -->
             <a href="https://t.me/+wKaBv_ipVqgyNGM1" target="_blank" class="btn-telegram">
                 <i class="fa-paper-plane fa-solid"></i>
                 JOIN TELEGRAM CHANNEL
@@ -318,3 +394,5 @@
 
 </body>
 </html>
+
+```
