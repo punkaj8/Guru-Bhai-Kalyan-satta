@@ -1,0 +1,299 @@
+Aapka `index.html` code canvas window mein tayar kar diya gaya hai. Aap ise niche se bhi copy kar sakte hain:
+
+```html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATTA KING [ GURU BHAI ]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0d131a;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 440px;
+            background: #131b24;
+            border-radius: 28px;
+            padding: 35px 24px 25px 24px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px auto;
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00a2ed;
+            box-shadow: 0 0 20px rgba(0, 162, 237, 0.6);
+        }
+
+        .badge-verified {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            background: #00a2ed;
+            color: #ffffff;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            border: 2px solid #131b24;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .sub-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 162, 237, 0.1);
+            border: 1px solid rgba(0, 162, 237, 0.3);
+            color: #00a2ed;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .sub-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #00a2ed;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .join-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: rgba(220, 150, 0, 0.1);
+            border: 1px solid rgba(220, 150, 0, 0.3);
+            color: #d1d5db;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 18px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+        }
+
+        .join-badge strong {
+            color: #ffb800;
+            font-weight: 700;
+        }
+
+        .feature-box {
+            background: #18222d;
+            border-radius: 18px;
+            padding: 16px 20px;
+            text-align: left;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #e5e7eb;
+        }
+
+        .btn-telegram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: linear-gradient(180deg, #0088cc 0%, #006699 100%);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 16px;
+            border-radius: 14px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+            transition: all 0.2s ease;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-telegram:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.6);
+            background: linear-gradient(180deg, #0099e6 0%, #0077b3 100%);
+        }
+
+        .btn-telegram:active {
+            transform: translateY(0);
+        }
+
+        .btn-telegram i {
+            font-size: 20px;
+        }
+
+        .disclaimer-box {
+            background: rgba(45, 20, 25, 0.6);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            border-radius: 14px;
+            padding: 16px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .disclaimer-title {
+            color: #f87171;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .disclaimer-text {
+            color: #9ca3af;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .footer-note {
+            color: #6b7280;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .footer-note i {
+            color: #ffb800;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profile Picture -->
+        <div class="avatar-wrapper">
+            <img src="https://v0.dev/placeholder.svg?height=110&width=110" alt="Satta King Guru Bhai Profile" class="avatar-img">
+            <div class="badge-verified">
+                <i class="fa-solid fa-check"></i>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="title">SATTA KING [ GURU BHAI ]</h1>
+
+        <!-- Subscribers Badge -->
+        <div class="sub-badge">
+            <span class="sub-dot"></span>
+            <span>200,000 subscribers</span>
+        </div>
+
+        <br>
+
+        <!-- Dynamic Join Count Badge -->
+        <div class="join-badge">
+            🔥 <strong>18,432</strong> logon ne abhi join kiya
+        </div>
+
+        <!-- Feature Box -->
+        <div class="feature-box">
+            <div class="feature-item">
+                <div class="feature-icon">🔥</div>
+                <div class="feature-text">फरीदाबाद से दिसावर</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎯</div>
+                <div class="feature-text">रोजाना 4 में से 3 लोकेशन पास</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💯</div>
+                <div class="feature-text">महीने में 26/27 दिन पासिंग का वादा</div>
+            </div>
+        </div>
+
+        <!-- Telegram Button -->
+        <a href="https://t.me/+wKaBv_ipVqgyNGM1" target="_blank" class="btn-telegram">
+            <i class="fa-paper-plane fa-solid"></i>
+            JOIN TELEGRAM CHANNEL
+        </a>
+
+        <!-- Disclaimer Box -->
+        <div class="disclaimer-box">
+            <div class="disclaimer-title">
+                ⚠️ Disclaimer
+            </div>
+            <div class="disclaimer-text">
+                All content shared on this channel is purely for educational and informational purposes. Trading in stocks and derivatives involves risk. Please consult a SEBI-registered financial advisor before making investment decisions.
+            </div>
+        </div>
+
+        <!-- Footer Security Note -->
+        <div class="footer-note">
+            🔒 100% Free & Secure Channel Access
+        </div>
+    </div>
+
+</body>
+</html>
+
+```
